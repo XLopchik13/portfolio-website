@@ -1,5 +1,5 @@
+import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
-import { ReactNode } from "react";
 
 interface SectionWrapperProps {
   id: string;

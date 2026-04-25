@@ -4,7 +4,7 @@ import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { SITE_CONFIG } from "@/lib/constants";
 import { serializeJsonLd } from "@/lib/json-ld";
 import "./globals.css";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",

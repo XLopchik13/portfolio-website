@@ -1,6 +1,6 @@
 "use client";
 
-import { SyntheticEvent, useEffect, useRef, useState } from "react";
+import { type SyntheticEvent, useEffect, useRef, useState } from "react";
 import { sendContactEmail } from "@/app/actions/contact";
 import { cn } from "@/lib/cn";
 import { contactSchema } from "@/lib/validations";
@@ -58,11 +58,21 @@ export const ContactForm = () => {
   };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-4">
+    <form
+      ref={formRef}
+      onSubmit={handleSubmit}
+      noValidate
+      className="space-y-4"
+    >
       {(
         [
           { id: "name", label: "Name", type: "text", placeholder: "Your name" },
-          { id: "email", label: "Email", type: "email", placeholder: "your@email.com" },
+          {
+            id: "email",
+            label: "Email",
+            type: "email",
+            placeholder: "your@email.com",
+          },
         ] as const
       ).map(({ id, label, type, placeholder }) => (
         <div key={id}>
@@ -81,9 +91,17 @@ export const ContactForm = () => {
             aria-describedby={`${id}-error`}
             aria-invalid={!!fieldErrors[id]}
           />
-          <p id={`${id}-error`} className="h-5 mt-1" role="alert" aria-live="polite">
+          <p
+            id={`${id}-error`}
+            className="h-5 mt-1"
+            role="alert"
+            aria-live="polite"
+          >
             {fieldErrors[id] && (
-              <span key={`${id}-${errorKey}`} className="text-xs text-red-500 animate-error-flash">
+              <span
+                key={`${id}-${errorKey}`}
+                className="text-xs text-red-500 animate-error-flash"
+              >
                 {fieldErrors[id]}
               </span>
             )}
@@ -107,9 +125,17 @@ export const ContactForm = () => {
           aria-describedby="message-error"
           aria-invalid={!!fieldErrors.message}
         />
-        <p id="message-error" className="h-5 mt-1" role="alert" aria-live="polite">
+        <p
+          id="message-error"
+          className="h-5 mt-1"
+          role="alert"
+          aria-live="polite"
+        >
           {fieldErrors.message && (
-            <span key={`message-${errorKey}`} className="text-xs text-red-500 animate-error-flash">
+            <span
+              key={`message-${errorKey}`}
+              className="text-xs text-red-500 animate-error-flash"
+            >
               {fieldErrors.message}
             </span>
           )}

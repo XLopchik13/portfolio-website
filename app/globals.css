@@ -91,3 +91,24 @@ textarea:focus,
 textarea:focus-visible {
   outline: none;
 }
+
+[data-scroll-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--duration-slow) ease,
+    transform var(--duration-slow) ease;
+}
+
+[data-scroll-reveal][data-revealed] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
