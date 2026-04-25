@@ -1,7 +1,9 @@
 import { About } from "@/components/about";
+import { Contact } from "@/components/contact";
 import { Hero } from "@/components/hero";
 import { Nav } from "@/components/nav";
 import { Projects } from "@/components/projects";
+import { Footer } from "@/components/shared";
 
 export default function Home() {
   return (
@@ -11,8 +13,9 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-        {/* Contact */}
+        <Contact />
       </main>
+      <Footer />
     </>
   );
 }

@@ -2,7 +2,7 @@ import { Button, SectionWrapper, Tag } from "@/components/shared";
 import { SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
 
 export const Hero = () => (
-  <SectionWrapper id="hero" className="pt-32 pb-24">
+  <SectionWrapper id="hero" className="pt-32 pb-16">
     <span className="text-5xl" role="img" aria-label="wave">
       ⛩️
     </span>

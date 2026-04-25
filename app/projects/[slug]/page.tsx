@@ -32,15 +32,15 @@ export default async function ProjectPage({ params }: Props) {
     <main className="max-w-3xl mx-auto px-6 py-24">
       <div className="mb-12">
         <span className="text-4xl">{project.emoji}</span>
-        <h1 className="mt-4 text-3xl font-semibold text-[var(--color-text)]">
+        <h1 className="mt-4 text-3xl font-semibold text-text">
           {project.title}
         </h1>
-        <p className="mt-2 text-[var(--color-muted)]">{project.tagline}</p>
+        <p className="mt-2 text-muted">{project.tagline}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tech.map((tag) => (
             <span
               key={tag}
-              className="font-mono text-xs px-2 py-1 rounded-sm bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-muted)]"
+              className="font-mono text-xs px-2 py-1 rounded-sm bg-surface border border-border text-muted"
             >
               {tag}
             </span>
