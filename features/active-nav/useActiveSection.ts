@@ -2,31 +2,34 @@
 
 import { useEffect, useState } from "react";
 
+const resolveId = (id: string) => (id === "" ? "hero" : id);
+
 export const useActiveSection = (sectionIds: string[]): string => {
   const [active, setActive] = useState<string>(sectionIds[0] ?? "");
 
   useEffect(() => {
-    const observers = new Map<string, IntersectionObserver>();
+    const check = () => {
+      const { scrollY, innerHeight } = window;
+      const maxScroll = document.documentElement.scrollHeight - innerHeight;
+      const cutoff = scrollY + 64;
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
+      let current = sectionIds[0] ?? "";
+      for (const id of sectionIds) {
+        const el = document.getElementById(resolveId(id));
+        if (!el) continue;
 
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry?.isIntersecting) setActive(id);
-        },
-        { rootMargin: "-50% 0px -50% 0px", threshold: 0 },
-      );
+        if (el.offsetTop <= cutoff) {
+          current = id;
+        } else if (el.offsetTop > maxScroll + 64 && scrollY >= maxScroll - 50) {
+          current = id;
+        }
+      }
+      setActive(current);
+    };
 
-      observer.observe(el);
-      observers.set(id, observer);
-    });
-
-    return () =>
-      observers.forEach((obs) => {
-        obs.disconnect();
-      });
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    return () => window.removeEventListener("scroll", check);
   }, [sectionIds]);
 
   return active;
