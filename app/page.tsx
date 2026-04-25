@@ -4,15 +4,15 @@ import { Nav } from "@/components/nav";
 import { Projects } from "@/components/projects";
 
 export default function Home() {
-	return (
-		<>
-			<Nav />
-			<main>
-				<Hero />
-				<About />
-				<Projects />
-				{/* Contact */}
-			</main>
-		</>
-	);
+  return (
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        {/* Contact */}
+      </main>
+    </>
+  );
 }
