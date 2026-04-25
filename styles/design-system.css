@@ -1,0 +1,56 @@
+/*
+  Design System — Notion-inspired
+  Reference only — actual tokens live in globals.css @theme block.
+  Use these as the source of truth when building components.
+
+  COLORS
+  ──────────────────────────────────────────
+  Background  #ffffff   --color-background
+  Surface     #f7f7f5   --color-surface
+  Border      #e7e7e5   --color-border
+  Text        #37352f   --color-text
+  Muted       #9b9a97   --color-muted
+  Accent      #2383e2   --color-accent  (links, CTAs only)
+
+  TYPOGRAPHY
+  ──────────────────────────────────────────
+  UI font:    Plus Jakarta Sans  300 / 400 / 500 / 600 / 700
+  Code font:  JetBrains Mono     400 / 500  (tags, labels, code)
+
+  Scale (px / rem):
+  xs    12px  0.75rem
+  sm    14px  0.875rem
+  base  16px  1rem
+  lg    18px  1.125rem
+  xl    20px  1.25rem
+  2xl   24px  1.5rem
+  3xl   30px  1.875rem
+  4xl   36px  2.25rem
+  5xl   48px  3rem
+
+  SPACING  (4px base unit)
+  ──────────────────────────────────────────
+  1   4px
+  2   8px
+  3   12px
+  4   16px
+  5   20px
+  6   24px
+  8   32px
+  10  40px
+  12  48px
+  16  64px
+  20  80px
+  24  96px
+
+  BORDERS
+  ──────────────────────────────────────────
+  Default:  1px solid #e7e7e5
+  Radius:   6px (cards, inputs)  2px (tags)
+
+  TRANSITIONS
+  ──────────────────────────────────────────
+  Default:  150ms ease
+  Medium:   250ms ease
+  Slow:     350ms ease
+*/
